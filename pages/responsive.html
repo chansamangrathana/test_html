@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive</title>
+    <style>
+      body {
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+        & h1 {
+          font-size: 5rem;
+          text-align: center;
+          display: none;
+          & span {
+            color: orangered;
+          }
+        }
+
+        h1:nth-child(1) {
+          display: block;
+        }
+      }
+
+      @media (min-width: 576px) {
+        body {
+          & h1:nth-child(1) {
+            display: none;
+          }
+
+          & h1:nth-child(2) {
+            display: block;
+          }
+        }
+      }
+
+      @media (min-width: 768px) {
+        body {
+          & h1:nth-child(2) {
+            display: none;
+          }
+
+          & h1:nth-child(3) {
+            display: block;
+          }
+        }
+      }
+
+      @media (min-width: 992px) {
+        body {
+          & h1:nth-child(3) {
+            display: none;
+          }
+
+          & h1:nth-child(4) {
+            display: block;
+          }
+        }
+      }
+
+            @media (min-width: 1200px) {
+        body {
+          & h1:nth-child(4) {
+            display: none;
+          }
+
+          & h1:nth-child(5) {
+            display: block;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Default Screen</h1>
+    <h1>Mobile Screen <span>576px</span></h1>
+    <h1>Tablet Small Screen <span>768px</span></h1>
+    <h1>Tablet Larg Screen <span>992px</span></h1>
+    <h1>Laptop Screen <span>1200px</span></h1>
+  </body>
+</html>
